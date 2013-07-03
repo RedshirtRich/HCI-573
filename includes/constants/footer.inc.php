@@ -1,0 +1,1 @@
+<footer>(c) 2013 Rich Tanner | HCI 573X</footer>
