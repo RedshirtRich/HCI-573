@@ -12,12 +12,12 @@ if (!defined('BASE')) {
 ?>
 <h2>About</h2>
 
-<p>Here you will find my thoughts on this assignment.</p>
+<p>The journey toward Sustainable Journey</p>
 
 <div id="divContainer">
 
 	<br>
 	<br>
-	This assignment is finally DONE.  This was a more difficult assignment, due largely to the many pieces involved.  I had originally though this would be easier, and had started with most of the code I wrote for the previous assignment, re-using the MySQL pieces and forms.  However, closer inspection of the instructions made me realize that the database pieces would have to be rewritten to use AJAX calls, which set me back a few steps.  I didn't have too many problems switching to the AJAX calls, but it did take more time.  I had some difficulty getting the Highcharts libraries up and running, as the implementation is VERY particular about how and where the charts are called.  Once I finally got a sample chart up and running, it wasn't too difficult to parse through my data and replace the sample charts with something meaningful.  As usual, I spent a large amount of time playing in CSS, tinkering with new looks and colors.  I have been trying to reuse CSS through the assignments, in an effort to minimize my time 'lost' playing with the settings, but I just can't help myself.  All of the assignment goals were met, with much of the code being written at tables between WWDC sessions at the Moscone Convention Center in San Francisco, CA.
+	We need to really jazz up the look of this very simple looking template.  I would love to get our site up quickly, as far as basic functionality goes, and then have time to play with CSS like crazy. <br> <br> We also need to talk about who is going to do the video presentation.  I don't know if I will have time for that, but if Michelle, who's vision this was, would like the chance to convey her vision and her passion about the content, I think that would be a good thing to display.
 
 </div>
