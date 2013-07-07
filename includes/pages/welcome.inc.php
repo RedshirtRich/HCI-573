@@ -37,30 +37,27 @@ $ (function() //function that gets called whenever the document is loaded
 	$(".submit").click(function() {
 		//Step 1: get the inputs that the user entered
 		var entered_name = $("#name").val();
-		var entered_title = $("#title").val();
-		var entered_blog = $("#blog").val();
+		var entered_password = $("#password").val();
 
 		//Step 2: check if all inputs are entered 
-		if (entered_name == '' || entered_title == '' || entered_blog == '') {
+		if (entered_name == '' || entered_password == '') {
 			
 			$(".error").fadeIn(400).show().html('<p id="error" class=error><b><span style="color:red;">Please complete all fields.</span></b></p>');
 		}
 		else {
-			var html_success = '<p id="success" class=success><b>Your blog was successfully posted, ' + entered_name + '</b></p>';
+			var html_success = '<p id="success" class=success><b>Login successful, ' + entered_name + '</b></p>';
 		
 			//this gets executed if all fields were entered
-			var post_data_string = 'name=' + entered_name + '&title=' + entered_title + '&blog=' + entered_blog;
+			var post_data_string = 'name=' + entered_name + '&passy=' + entered_password;
 			
-			//e.g., "name=Bosephus&title=MyBlog&blog=WhyILikeBlogging
 			
 			$.ajax({
 				type: "POST",
-				url:"process_submission.php?action=add",
+				url:"process_login.php?action=login",
 				data: post_data_string,
 				success: function(){
 					$("#name").val(''); //clear name
-					$("#title").val(''); //clear title
-					$("#blog").val(''); // clear blog
+					$("#password").val(''); //clear password
 					
 					//hide the error message
 					$(".error").fadeOut(2000).hide();
@@ -89,23 +86,20 @@ $ (function() //function that gets called whenever the document is loaded
 			
 			<p id="loginHeader" class=loginHeader><span style="color:black;">Log In</span></p>
 			<br>
-			<label>User ID:</label>
+			<label>User Name:</label>
 			<input type="text" name="name" id="name" />
 			<br>
 			<label>Password:</label>
-			<input type="text" name="title" id="title" />
+			<input type="text" name="password" id="password" />
 			<br>
 			<br>
-
-			<!-- input our hidden page values, $entryTime -->
-			<input type="hidden" name="entryTime" id="entryTime" value=<?php $date = new DateTime(); echo $date->getTimestamp(); ?> />
 
 			<button type="submit" class="submit" id="submit_button">Log In</button>
-			<br>
 			<br>
 			<span class="success" id="success" style="display:none; color:red;"></span>
 			<span class="error" id="error" style="display:none; color:red;"></span>
 			<label>Not a site member?</label>
+			<br><br>
 			<?php echo "<p id=\"registerLink\" class=registerLink><a href=\"".$url_self . "?p=register\">Register Here !</a></p>"; ?>
 			<br>
 
