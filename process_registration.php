@@ -30,13 +30,13 @@ if ($_POST) //check if POST data exists
 
 		// we should have a database now.  Check for the table
 		// and run setup query 
-		$sql  = "SELECT * FROM $table_name";
+		$sql  = "SELECT * FROM $login_table_name";
 		$result = mysql_query($sql,$con);
 		if ($result) {
 			// echo "we have that table";
 		} else {
 			//an SQL query for creating our table
-			$sql = "CREATE TABLE IF NOT EXISTS $table_name (
+			$sql = "CREATE TABLE IF NOT EXISTS $login_table_name (
 				ProgramID INT DEFAULT 1,
 				UserID INT NOT NULL AUTO_INCREMENT,
 				UserName CHAR(15) NOT NULL,
@@ -58,7 +58,7 @@ if ($_POST) //check if POST data exists
 			// PROTOTYPE TEST CODE
 			// Run another query to insert our default users
 			$sql = "INSERT INTO 
-				$table_name (UserName, UserRegisterName, UserPassword, UserRegisterEmail, UserType, EntryTime) 
+				$login_table_name (UserName, UserRegisterName, UserPassword, UserRegisterEmail, UserType, EntryTime) 
 				VALUES 
 				('mengduo', 'hci573_mengduo', 'hci573', 'marinama@iastate.edu', 1, now()), 
 				('rich', 'hci573_rich', 'hci573', 'rwtanner@iastate.edu', 1, now()),
@@ -71,18 +71,11 @@ if ($_POST) //check if POST data exists
 			// ---------------------------------------------- //
 		}
 
-		$sql = "INSERT INTO $table_name (UserName, UserRegisterName, UserPassword, UserRegisterEmail, UserType, EntryTime) VALUES ('$name', '$id', '$password', '$email', '$type', now())";
+		$sql = "INSERT INTO $login_table_name (UserName, UserRegisterName, UserPassword, UserRegisterEmail, UserType, EntryTime) VALUES ('$name', '$id', '$password', '$email', '$type', now())";
 		
 		// execute the insert query
 		$result = mysql_query($sql,$con) or die(mysql_error());
 
-
-		if ($result) {
-			// redirect now that we are registered and such
-			// Redirect to main
-			$url = BASE . "/index.php?p=welcome";
-			header("Location: $url");
-		}
 	   	//Data added, we exit the script
 	   	exit();
 	}
