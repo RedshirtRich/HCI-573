@@ -9,6 +9,7 @@ html {
 	background: -ms-linear-gradient(-45deg,  #008500 0%,#00CC00 100%); /* IE10+ */
 	background: linear-gradient(135deg,  #008500 0%,#00CC00 100%); /* W3C */
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#008500', endColorstr='#00CC00',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+	overflow: scroll;
 }
 
 body {
@@ -16,13 +17,16 @@ body {
   	color: black;
 	background: white;
 	width: 800px;
-	height: 100% - 60px;
-	margin-top:40;
+	height: 100%;
+	/*height: 100% - 60px;*/
+	margin-top: 0px;
 	margin-right: auto;
-	margin-bottom:20px;
+	margin-bottom: 0px;
 	margin-left: auto;
 	padding: 20px auto;
-	border: 1px solid #000;
+	border: 1px solid #FFFFFF;
+	box-shadow:0px 0px 5px #000000;
+	overflow: scroll;
 }
 
 p {
@@ -33,6 +37,12 @@ p {
 h1 {
 	font-size: 50px;
 	color: red;
+}
+
+header {
+	/*border: 1px solid #000000;*/
+	font-size: 30px;
+	color: black;
 }
 
 th {
@@ -58,6 +68,12 @@ a:visited {
 	width: 100% - 40px;
 	height: 100% - 40px;
     margin: 20px;
+}
+
+#divFooterContainer {
+	width: 100%;
+	height: 60px;
+	/*border: 1px solid #000000;*/
 }
 
 #divWelcomeContentPane {
@@ -90,11 +106,25 @@ a:visited {
     overflow: hidden;
 }
 
+#divRegister {
+	border: 1px solid #008500;
+	box-shadow:1px 1px 5px #000000;
+	float: left;
+    padding: 0;
+    margin: 0;
+    width: 475px;
+	height: 450px;
+    margin: 25px auto;
+    padding: 5px auto;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
 #nameEntryForm {
 	/*border: 1px solid #000000;*/
 	margin: 0 auto;
 	width: 500px;
-	height: 75%;
+	height: 555px;
 }
 
 #divChartContainer {
@@ -102,7 +132,7 @@ a:visited {
 	font-size: 12px;
 	margin: 0 auto;
 	width: 600px;
-	height: 75%;
+	height: 555px;
 }
 
 #divContainer {
@@ -111,7 +141,7 @@ a:visited {
 	text-align: left;
 	margin: 0 auto;
 	width: 100%;
-	height: 75%;
+	height: 555px;
 }
 
 #divBlogArchiveContainer {
@@ -119,7 +149,7 @@ a:visited {
 	font-size: 18px;
 	margin: 0 auto;
 	width: 760px;
-	height: 75%;
+	height: 555px;
 	overflow: scroll;
 }
 

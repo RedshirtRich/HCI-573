@@ -80,46 +80,34 @@ $ (function() //function that gets called whenever the document is loaded
 });
 </script>
 
-<div id="nameEntryForm"> 
-	<form id="form" name="form" method="post">  <!-- action="process_submission.php" -->
-		
-		<br>
-		<br>
-		<label>Enter your name:</label>
-		<input type="text" name="name" id="name" />
-		<br>
+<div id="divContainer">
+	<div id="divRegister">
+		<p id="loginHeader" class=loginHeader><span style="color:black;">Register Now</span></p>
+	</div>
 
-		<br>
-		<label>Post Title:</label>
-		<input type="text" name="title" id="title" />
-		<br>
+	<div id="divLoginForm"> 
+		<form id="form" name="form" method="post">  <!-- action="process_submission.php" -->
+			
+			<p id="loginHeader" class=loginHeader><span style="color:black;">Log In</span></p>
+			<br>
+			<label>User ID:</label>
+			<input type="text" name="name" id="name" />
+			<br>
+			<label>Password:</label>
+			<input type="text" name="title" id="title" />
+			<br>
+			<br>
 
-		<br>
-		<label>Blog Content:</label>
-		<textarea name="blog" id="blog"></textarea>
-		<br>
+			<!-- input our hidden page values, $entryTime -->
+			<input type="hidden" name="entryTime" id="entryTime" value=<?php $date = new DateTime(); echo $date->getTimestamp(); ?> />
 
-		<!-- input our hidden page values, $entryTime -->
-		<input type="hidden" name="entryTime" id="entryTime" value=<?php $date = new DateTime(); echo $date->getTimestamp(); ?> />
+			<button type="submit" class="submit" id="submit_button">Log In</button>
+			<br>
+			<br>
+			<span class="success" id="success" style="display:none; color:red;"></span>
+			<span class="error" id="error" style="display:none; color:red;"></span>
+			
+		</form>
 
-		<br>
-		<br>
-		<br>
-		<br>
-		<br>
-		<br>
-		<br>
-		<br>
-		<br>
-		<br>
-		<br>
-		<button type="submit" class="submit" id="submit_button">Submit</button>
-		<br>
-		<br>
-		<span class="success" id="success" style="display:none; color:red;"></span>
-		<span class="error" id="error" style="display:none; color:red;"></span>
-
-		
-	</form>
-
+	</div>
 </div>

@@ -79,6 +79,9 @@ switch ($page) {
 
 <!-- create a new div to hold our content -->
 		<div id="divParent">
+
+			<!-- include footer here -->
+			<?php include 'includes/constants/header.inc.php';?>
 	
 			<?php
 			//checks if the file does not exist
@@ -91,13 +94,14 @@ switch ($page) {
 			<!-- Include the page that was called (or default if none) -->
 			<?php include "includes/pages/" . $page; ?>
 
-			<!-- Include a footer (with links) -->
-			<?php include "includes/constants/footerNav.inc.php"; ?>
-			<br>
-			<br>
-			
-			<!-- include footer here -->
-			<?php include 'includes/constants/footer.inc.php';?>
+			<div id="divFooterContainer">
+				<!-- Include a footer (with links) -->
+				<?php include "includes/constants/footerNav.inc.php"; ?>
+				<br>
+				<br>
+				<!-- include footer here -->
+				<?php include 'includes/constants/footer.inc.php';?>
+			</div>
 		</div>
 	</body>
 </html>

@@ -81,7 +81,7 @@ $ (function() //function that gets called whenever the document is loaded
 
 <div id="divContainer">
 	<div id="divWelcomeContentPane">
-		<p id="loginHeader" class=loginHeader><span style="color:black;">Welcome Contents will go HERE</span></p>
+		<p id="loginHeader" class=loginHeader><span style="color:black;">Find Interesting Topics</span></p>
 	</div>
 
 	<div id="divLoginForm"> 
