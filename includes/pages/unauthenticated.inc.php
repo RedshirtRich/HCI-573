@@ -1,8 +1,5 @@
 <?php
 
-ini_set('display_errors', 'On');
-error_reporting(E_ALL | E_STRICT);
-
 //Determine if this page was called directly, if so, redirect
 if (!defined('BASE')) {
 	//Include the constants file
@@ -15,8 +12,8 @@ if (!defined('BASE')) {
 }
 ?>
 <link href="<?php echo BASE; ?>/includes/styles/style.css" rel="stylesheet" type="text/css">
-<h2>Insert Data</h2>
-<p>Enter your Web Dev blog posts here.</p>
+<h2>Log In</h2>
+<p>Welcome.  You can Log In or Register here.</p>
 
 <script language="JavaScript" type="text/javascript" src="jquery-1.9.1.min.js"></script>
 <!-- add link to jquery library -->
@@ -27,11 +24,11 @@ $ (function() //function that gets called whenever the document is loaded
 {
 	//what happens when mousing over the button?
 	$ ("button").mouseenter(function() {
-		$(this).css("background-color","#269926");
+		$(this).css("background-color","#7f1d18");
 	});
 	
 	$ ("button").mouseleave(function() {
-		$(this).css("background-color","#008500");
+		$(this).css("background-color","#FF3B30");
 	});
 	
 	//Detect click on area
@@ -85,18 +82,13 @@ $ (function() //function that gets called whenever the document is loaded
 		
 		<br>
 		<br>
-		<label>Enter your name:</label>
+		<label>User Name:</label>
 		<input type="text" name="name" id="name" />
 		<br>
 
 		<br>
-		<label>Post Title:</label>
+		<label>Password:</label>
 		<input type="text" name="title" id="title" />
-		<br>
-
-		<br>
-		<label>Blog Content:</label>
-		<textarea name="blog" id="blog"></textarea>
 		<br>
 
 		<!-- input our hidden page values, $entryTime -->
@@ -113,7 +105,7 @@ $ (function() //function that gets called whenever the document is loaded
 		<br>
 		<br>
 		<br>
-		<button type="submit" class="submit" id="submit_button">Submit</button>
+		<button type="submit" class="submit" id="submit_button">Log In</button>
 		<br>
 		<br>
 		<span class="success" id="success" style="display:none; color:red;"></span>

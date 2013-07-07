@@ -1,7 +1,6 @@
 <?php
 
-ini_set('display_errors', 'On');
-error_reporting(E_ALL | E_STRICT);
+$url_self = $_SERVER['PHP_SELF'];
 
 //Determine if this page was called directly, if so, redirect
 if (!defined('BASE')) {
@@ -9,14 +8,14 @@ if (!defined('BASE')) {
 	require_once('../constants/dbc.php');
 
 	//Redirect to main
-	$url = BASE . "/HW4_rwtanner.php";
+	$url = BASE . "/index.php";
 	header("Location: $url");
 	exit;
 }
 ?>
 <link href="<?php echo BASE; ?>/includes/styles/style.css" rel="stylesheet" type="text/css">
-<h2>Insert Data</h2>
-<p>Enter your Web Dev blog posts here.</p>
+<h2>Welcome</h2>
+<p>You can Log In or Register here.</p>
 
 <script language="JavaScript" type="text/javascript" src="jquery-1.9.1.min.js"></script>
 <!-- add link to jquery library -->
@@ -80,46 +79,33 @@ $ (function() //function that gets called whenever the document is loaded
 });
 </script>
 
-<div id="nameEntryForm"> 
-	<form id="form" name="form" method="post">  <!-- action="process_submission.php" -->
-		
-		<br>
-		<br>
-		<label>Enter your name:</label>
-		<input type="text" name="name" id="name" />
-		<br>
+<div id="divContainer">
+	<div id="divLoginForm"> 
+		<form id="form" name="form" method="post">  <!-- action="process_submission.php" -->
+			
+			<p id="loginHeader" class=loginHeader><span style="color:black;">Log In</span></p>
+			<br>
+			<label>User ID:</label>
+			<input type="text" name="name" id="name" />
+			<br>
+			<label>Password:</label>
+			<input type="text" name="title" id="title" />
+			<br>
+			<br>
 
-		<br>
-		<label>Post Title:</label>
-		<input type="text" name="title" id="title" />
-		<br>
+			<!-- input our hidden page values, $entryTime -->
+			<input type="hidden" name="entryTime" id="entryTime" value=<?php $date = new DateTime(); echo $date->getTimestamp(); ?> />
 
-		<br>
-		<label>Blog Content:</label>
-		<textarea name="blog" id="blog"></textarea>
-		<br>
+			<button type="submit" class="submit" id="submit_button">Log In</button>
+			<br>
+			<br>
+			<span class="success" id="success" style="display:none; color:red;"></span>
+			<span class="error" id="error" style="display:none; color:red;"></span>
+			<?php echo "<p id=\"registerLink\" class=registerLink><a href=\"".$url_self . "?p=register\">Register Here !</a></p>"; ?>
+			<br>
 
-		<!-- input our hidden page values, $entryTime -->
-		<input type="hidden" name="entryTime" id="entryTime" value=<?php $date = new DateTime(); echo $date->getTimestamp(); ?> />
+			
+		</form>
 
-		<br>
-		<br>
-		<br>
-		<br>
-		<br>
-		<br>
-		<br>
-		<br>
-		<br>
-		<br>
-		<br>
-		<button type="submit" class="submit" id="submit_button">Submit</button>
-		<br>
-		<br>
-		<span class="success" id="success" style="display:none; color:red;"></span>
-		<span class="error" id="error" style="display:none; color:red;"></span>
-
-		
-	</form>
-
+	</div>
 </div>

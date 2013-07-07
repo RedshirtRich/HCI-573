@@ -1,1 +1,1 @@
-<footer>(c) 2013 Rich Tanner | HCI 573X</footer>
+<footer>(c) 2013 Sustainable Journey | HCI 573X</footer>

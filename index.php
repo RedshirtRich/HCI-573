@@ -27,6 +27,11 @@ if (isset($_GET['p']) or isset($_POST['p'])) {
 
 //Grab the page to display (if called)
 switch ($page) {
+
+	case "welcome":
+	$page = "welcome.inc.php";
+	$title = "Welcome! Log In or Register";
+	break;
 	
 	case "insert":
 	$page = "insertData.inc.php";
@@ -49,9 +54,10 @@ switch ($page) {
 	break;
 
 	//Set a default page if $page = NULL
+	//This is our "home" page, hit by simply going to our .index page
 	default:
-	$page = "insertData.inc.php";
-	$title = "Insert Data";
+	$page = "welcome.inc.php";
+	$title = "Welcome! Log In or Register";
 	break;
 }
 ?>

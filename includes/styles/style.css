@@ -1,26 +1,28 @@
 html {
 	/* a gradient background, coded for multiple browser support */
 	/* snagged from: http://www.colorzilla.com/gradient-editor/ */
-	background: #777777; /* Old browsers */
-	background: -moz-linear-gradient(-45deg,  #777777 0%, #878787 100%); /* FF3.6+ */
-	background: -webkit-gradient(linear, left top, right bottom, color-stop(0%,#777777), color-stop(100%,#878787)); /* Chrome,Safari4+ */
-	background: -webkit-linear-gradient(-45deg,  #777777 0%,#878787 100%); /* Chrome10+,Safari5.1+ */
-	background: -o-linear-gradient(-45deg,  #777777 0%,#878787 100%); /* Opera 11.10+ */
-	background: -ms-linear-gradient(-45deg,  #777777 0%,#878787 100%); /* IE10+ */
-	background: linear-gradient(135deg,  #777777 0%,#878787 100%); /* W3C */
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#777777', endColorstr='#878787',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+	background: #008500; /* Old browsers */
+	background: -moz-linear-gradient(-45deg,  #008500 0%, #00CC00 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, right bottom, color-stop(0%,#008500), color-stop(100%,#00CC00)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(-45deg,  #008500 0%,#00CC00 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(-45deg,  #008500 0%,#00CC00 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(-45deg,  #008500 0%,#00CC00 100%); /* IE10+ */
+	background: linear-gradient(135deg,  #008500 0%,#00CC00 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#008500', endColorstr='#00CC00',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
 }
 
 body {
-	font-family: 'HelveticaNeue-UltraLight', 'Helvetica Neue UltraLight', 'Helvetica Neue', Arial, Helvetica, sans-serif; font-weight: 100; letter-spacing: 1px;
-	color: black;
+	font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  	color: black;
 	background: white;
 	width: 800px;
-	height: 600px;
-	margin: 50px auto;
+	height: 100% - 60px;
+	margin-top:40;
+	margin-right: auto;
+	margin-bottom:20px;
+	margin-left: auto;
 	padding: 20px auto;
 	border: 1px solid #000;
-	border-radius: 10px;
 }
 
 p {
@@ -43,12 +45,12 @@ td {
 
 a:link {
 	/* unvisited link */
-	color: #FF3B30;
+	color: #008500;
 }      
 
 a:visited {
 	/* visited link */
-	color: #FF3B30;
+	color: #008500;
 }  
 
 #divParent {
@@ -58,11 +60,25 @@ a:visited {
     margin: 20px;
 }
 
+#divLoginForm {
+	border: 1px solid #008500;
+	float: right;
+    padding: 0;
+    margin: 0;
+    width: 260px;
+	height: 300px;
+    /*background-color: #67E667;*/
+    margin: 25px auto;
+    padding: 5px auto;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
 #nameEntryForm {
 	/*border: 1px solid #000000;*/
 	margin: 0 auto;
 	width: 500px;
-	height: 420px;
+	height: 75%;
 }
 
 #divChartContainer {
@@ -70,7 +86,7 @@ a:visited {
 	font-size: 12px;
 	margin: 0 auto;
 	width: 600px;
-	height: 420px;
+	height: 75%;
 }
 
 #divContainer {
@@ -78,8 +94,8 @@ a:visited {
 	font-size: 16px;
 	text-align: left;
 	margin: 0 auto;
-	width: 500px;
-	height: 420px;
+	width: 100%;
+	height: 75%;
 }
 
 #divBlogArchiveContainer {
@@ -87,24 +103,43 @@ a:visited {
 	font-size: 18px;
 	margin: 0 auto;
 	width: 760px;
-	height: 420px;
+	height: 75%;
 	overflow: scroll;
 }
 
+#loginHeader {
+	background-color: #39E639;
+	box-shadow:0px 1px 1px #008500;
+	float: center;
+	color: black;
+	font-weight: bold;
+	font-size: 20px;
+	width: 260px;
+	padding: 10px 20px;
+}
+
+#registerLink {
+	font-size: 16px;
+	width: 260px;
+	padding: 10px 20px;
+}
+
 label {
-	float: left;
-	font-size: 18px;
-	width: 200;
-	line-height: 25px;
+	float: center;
+	font-size: 16px;
+	width: 220px;
+	line-height: 23px;
+	margin: 5px 20px;
 }
 
 input {
-	float: left;
-	font-size: 18px;
+	float: center;
+	font-size: 16px;
 	border: 1px solid #cccccc;
-	width: 300px;
-	height: 25px;
+	width: 220px;
+	height: 23px;
 	background: ghostwhite;
+	margin: 5px 20px;
 }
 
 textarea {
@@ -112,33 +147,40 @@ textarea {
 	float: left;
 	font-size: 18px;
 	border: 1px solid #cccccc;
-	width: 300;
+	width: 220px;
 	height: 200px;
 	background: ghostwhite;
 }
 
 #submit_button {
 	clear: both;
-	width: 80px;
-	height: 40px;
-	background: #FF3B30;
+	width: 220px;
+	height: 30px;
+	background: #008500;
 	text-align: center;
-	line-height: 40px;
+	line-height: 25px;
 	color: white;
-	font-size: 18px;
+	font-size: 16px;
 	font-weight: bold;
+	margin: 5px 20px;
 }
 
 #error {
-	margin: auto;
+	text-align: center;
 	color: red;
 	font-weight: bold;
+	width: 220px;
+	height: 30px;
+	margin: 5px 20px;
 }
 
 #success {
-	margin: auto;
+	text-align: center;
 	color: black;
 	font-weight: bold;
+	width: 220px;
+	height: 30px;
+	margin: 5px 20px;
 }
 
 #blogDiv {

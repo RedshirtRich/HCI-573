@@ -6,7 +6,7 @@ if (!defined('BASE')) {
 	require_once('../constants/dbc.php');
 
 	//Redirect to main
-	$url = BASE . "/HW4_rwtanner.php";
+	$url = BASE . "/index.php";
 	header("Location: $url");
 	exit;
 }

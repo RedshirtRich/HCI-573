@@ -2,9 +2,14 @@
 <?php
 $url_self = $_SERVER['PHP_SELF'];
 
+if ($page == "welcome.inc.php"){
+	echo "Welcome";
+}
+else {
+	echo "<a href=\"".$url_self . "?p=welcome\">Welcome</a>";
+}
 
-// 1. Using a page template (e.g., the example in lecture 8), create a site with 3 content areas: "Insert Data", "Browse Data", "Chart", and "About". 
-		// Your template should include either a footer or a side navigation bar. 
+echo " | ";
 
 if ($page == "insertData.inc.php"){
 	echo "Insert Data";
