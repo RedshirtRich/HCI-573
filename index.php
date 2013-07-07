@@ -32,6 +32,12 @@ switch ($page) {
 	$page = "welcome.inc.php";
 	$title = "Welcome! Log In or Register";
 	break;
+
+	// this should NOT be in the navBar, but is accessable ONLY from the logon div
+	case "register":
+	$page = "register.inc.php";
+	$title = "Register";
+	break;
 	
 	case "insert":
 	$page = "insertData.inc.php";
