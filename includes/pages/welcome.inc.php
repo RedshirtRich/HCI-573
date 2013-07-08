@@ -25,11 +25,11 @@ if (!defined('BASE')) {
 $ (function() //function that gets called whenever the document is loaded
 {
 	//what happens when mousing over the button?
-	$ ("button").mouseenter(function() {
+	$ ("#submit_button").mouseenter(function() {
 		$(this).css("background-color","#269926");
 	});
 	
-	$ ("button").mouseleave(function() {
+	$ ("#submit_button").mouseleave(function() {
 		$(this).css("background-color","#008500");
 	});
 	
@@ -95,14 +95,13 @@ $ (function() //function that gets called whenever the document is loaded
 			<br>
 
 			<button type="submit" class="submit" id="submit_button">Log In</button>
-			<br>
 			<span class="success" id="success" style="display:none; color:red;"></span>
 			<span class="error" id="error" style="display:none; color:red;"></span>
 			<label>Not a site member?</label>
-			<br><br>
-			<?php echo "<p id=\"registerLink\" class=registerLink><a href=\"".$url_self . "?p=register\">Register Here !</a></p>"; ?>
 			<br>
-
+			<br>
+			<br>
+			<?php echo "<p id=\"registerLink\" class=registerLink><a href=\"".$url_self . "?p=register\">Register Here !</a></p>"; ?>
 			
 		</form>
 
