@@ -3,6 +3,15 @@
 include 'includes/constants/sql_constants.php';
 include 'includes/constants/dbc.php';
 
+session_start();
+
+if (!isset($_SESSION['userName'])) {
+	$_SESSION['userName'] = '';
+	$_SESSION['userID'] = '';
+	$_SESSION['userType'] = '';
+}
+
+
 if ($_POST) //check if POST data exists 
 {
 	if ($_GET['action'] == "add") //did someone pass a variable called action with a value add
@@ -75,6 +84,13 @@ if ($_POST) //check if POST data exists
 		
 		// execute the insert query
 		$result = mysql_query($sql,$con) or die(mysql_error());
+
+		if ($result) {
+			// set up our session variables based on the new registration
+			$_SESSION['userName'] = $name;
+			$_SESSION['userID'] = $id;
+			$_SESSION['userType'] = $type;
+		}
 
 	   	//Data added, we exit the script
 	   	exit();

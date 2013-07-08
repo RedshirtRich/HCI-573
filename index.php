@@ -11,10 +11,17 @@
 
 */
 
-
 //Include the database and constants file
 require_once 'includes/constants/dbc.php';
 require_once 'includes/constants/sql_constants.php';
+
+session_start();
+
+if (!isset($_SESSION['userName'])) {
+	$_SESSION['userName'] = '';
+	$_SESSION['userID'] = '';
+	$_SESSION['userType'] = '';
+}
 
 //Determine if a page was actually called -- essentially checks if the URL has ?p=something, or if the variable was passed as POST data
 if (isset($_GET['p']) or isset($_POST['p'])) {
