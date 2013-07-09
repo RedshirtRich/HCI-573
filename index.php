@@ -25,6 +25,8 @@ if (!isset($_SESSION['userName'])) {
 	$_SESSION['userName'] = '';
 	$_SESSION['userID'] = '';
 	$_SESSION['userType'] = '';
+	$_SESSION['memberSince'] = '';
+	$_SESSION['pointsEarned'] = '';
 }
 
 //Determine if a page was actually called -- essentially checks if the URL has ?p=something, or if the variable was passed as POST data

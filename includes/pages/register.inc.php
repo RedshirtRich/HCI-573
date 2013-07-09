@@ -198,11 +198,15 @@ $ (function() //function that gets called whenever the document is loaded
 					</tr>
 				</table>
 
-				<button type="register" class="register" id="register_button">Register</button>
+				<button type="register" class="register" id="register_button">Create Account</button>
 				<br>
 				<br>
 				<span class="successReg" id="successReg" style="display:none; color:black;"></span>
 				<span class="errorReg" id="errorReg" style="display:none; color:red;"></span>
+				<br>
+				<center>
+					<p>Kids get 10 free points just for creating an account!</p>
+				</center>
 			</center>
 			
 		</form>

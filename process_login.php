@@ -13,6 +13,8 @@ if (!isset($_SESSION['userName'])) {
 	$_SESSION['userName'] = '';
 	$_SESSION['userID'] = '';
 	$_SESSION['userType'] = '';
+	$_SESSION['memberSince'] = '';
+	$_SESSION['pointsEarned'] = '';
 }
 
 if ($_POST) //check if POST data exists 
@@ -52,7 +54,8 @@ if ($_POST) //check if POST data exists
 				UserRegisterName CHAR(15) NOT NULL,
 				UserPassword CHAR(12) NOT NULL,
 				UserRegisterEmail CHAR(50) NOT NULL,
-				UserType INT,
+				UserType INT NOT NULL,
+				UserPoints INT DEFAULT 0,
 				UserHeaderPath CHAR(100),
 				UserNote CHAR(100),
 				EntryTime varchar(30),
@@ -67,13 +70,13 @@ if ($_POST) //check if POST data exists
 			// PROTOTYPE TEST CODE
 			// Run another query to insert our default users
 			$sql = "INSERT INTO 
-				$login_table_name (UserName, UserRegisterName, UserPassword, UserRegisterEmail, UserType, EntryTime) 
+				$login_table_name (UserName, UserRegisterName, UserPassword, UserRegisterEmail, UserType, UserPoints, EntryTime) 
 				VALUES 
-				('mengduo', 'hci573_mengduo', 'hci573', 'marinama@iastate.edu', 1, now()), 
-				('rich', 'hci573_rich', 'hci573', 'rwtanner@iastate.edu', 1, now()),
-				('michelle', 'hci573_michelle', 'hci573', 'mblomber@iastate.edu', 1, now()),
-				('hci573', 'hci573', 'hci573', 'hci573@iastate.edu', 1, now()),
-				('test', 'text_user', 'hci573', 'test@test.test', 2, now())";
+				('mengduo', 'hci573_mengduo', 'hci573', 'marinama@iastate.edu', 1, 0, '2013-06-30 12:00:00'), 
+				('rich', 'hci573_rich', 'hci573', 'rwtanner@iastate.edu', 1, 0, '2013-06-30 12:00:00'),
+				('michelle', 'hci573_michelle', 'hci573', 'mblomber@iastate.edu', 1, 0, '2013-06-30 12:00:00'),
+				('hci573', 'hci573', 'hci573', 'hci573@iastate.edu', 1, 0, '2013-06-30 12:00:00'),
+				('test', 'text_user', 'hci573', 'test@test.test', 2, 10, '2013-06-31 12:00:00')"; // kids get 10 points just for registering
 		
 			// execute the insert query
 			$insertDefaults = mysql_query($sql,$con) or die(mysql_error());
@@ -95,6 +98,8 @@ if ($_POST) //check if POST data exists
 			$_SESSION['userName'] = $row['UserName'];
 			$_SESSION['userID'] = $row['UserRegisterName'];
 			$_SESSION['userType'] = $row['UserType'];
+			$_SESSION['memberSince'] = $row['EntryTime'];
+			$_SESSION['pointsEarned'] = $row['UserPoints'];
 		} 
 
 	   //Data added, we exit the script

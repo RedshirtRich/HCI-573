@@ -9,6 +9,8 @@ if (!isset($_SESSION['userName'])) {
 	$_SESSION['userName'] = '';
 	$_SESSION['userID'] = '';
 	$_SESSION['userType'] = '';
+	$_SESSION['memberSince'] = '';
+	$_SESSION['pointsEarned'] = '';
 }
 
 if ($_POST) //check if POST data exists 
@@ -21,6 +23,12 @@ if ($_POST) //check if POST data exists
 		$email =  mysql_real_escape_string($_POST['userRegisterEmail']);
 		$password =  mysql_real_escape_string($_POST['userPassword']);
 		$type =  mysql_real_escape_string($_POST['userType']);
+
+		$points = 0; // default value
+
+		if ($type == 2) {
+			$points = 10; // kids get 10 points just for registering
+		}
 		
 		//Connect to MySQL Server
 		$con = mysql_connect($dbhost, $dbuser, $dbpass);
@@ -51,7 +59,8 @@ if ($_POST) //check if POST data exists
 				UserRegisterName CHAR(15) NOT NULL,
 				UserPassword CHAR(12) NOT NULL,
 				UserRegisterEmail CHAR(50) NOT NULL,
-				UserType INT,
+				UserType INT NOT NULL,
+				UserPoints INT DEFAULT 0,
 				UserHeaderPath CHAR(100),
 				UserNote CHAR(100),
 				EntryTime varchar(30),
@@ -66,29 +75,43 @@ if ($_POST) //check if POST data exists
 			// PROTOTYPE TEST CODE
 			// Run another query to insert our default users
 			$sql = "INSERT INTO 
-				$login_table_name (UserName, UserRegisterName, UserPassword, UserRegisterEmail, UserType, EntryTime) 
+				$login_table_name (UserName, UserRegisterName, UserPassword, UserRegisterEmail, UserType, UserPoints, EntryTime) 
 				VALUES 
-				('mengduo', 'hci573_mengduo', 'hci573', 'marinama@iastate.edu', 1, now()), 
-				('rich', 'hci573_rich', 'hci573', 'rwtanner@iastate.edu', 1, now()),
-				('michelle', 'hci573_michelle', 'hci573', 'mblomber@iastate.edu', 1, now()),
-				('hci573', 'hci573', 'hci573', 'hci573@iastate.edu', 1, now()),
-				('test', 'text_user', 'hci573', 'test@test.test', 2, now())";
+				('mengduo', 'hci573_mengduo', 'hci573', 'marinama@iastate.edu', 1, 0, '2013-06-30 12:00:00'), 
+				('rich', 'hci573_rich', 'hci573', 'rwtanner@iastate.edu', 1, 0, '2013-06-30 12:00:00'),
+				('michelle', 'hci573_michelle', 'hci573', 'mblomber@iastate.edu', 1, 0, '2013-06-30 12:00:00'),
+				('hci573', 'hci573', 'hci573', 'hci573@iastate.edu', 1, 0, '2013-06-30 12:00:00'),
+				('test', 'text_user', 'hci573', 'test@test.test', 2, 10, '2013-06-31 12:00:00')"; // kids get 10 points just for registering
 		
 			// execute the insert query
 			$insertDefaults = mysql_query($sql,$con) or die(mysql_error());
 			// ---------------------------------------------- //
 		}
 
-		$sql = "INSERT INTO $login_table_name (UserName, UserRegisterName, UserPassword, UserRegisterEmail, UserType, EntryTime) VALUES ('$name', '$id', '$password', '$email', '$type', now())";
+		$sql = "INSERT INTO $login_table_name (UserName, UserRegisterName, UserPassword, UserRegisterEmail, UserType, UserPoints, EntryTime) VALUES ('$name', '$id', '$password', '$email', '$type', '$points', now())";
 		
 		// execute the insert query
 		$result = mysql_query($sql,$con) or die(mysql_error());
 
 		if ($result) {
-			// set up our session variables based on the new registration
-			$_SESSION['userName'] = $name;
-			$_SESSION['userID'] = $id;
-			$_SESSION['userType'] = $type;
+			// Go BACK into the db and Grab this newly registered user.
+			$sql = "SELECT * FROM  $login_table_name  WHERE UserRegisterName = '$id' AND UserPassword = '$password'";
+
+			// execute the insert query
+			$finduser = mysql_query($sql, $con);
+
+			// if we got our expected ONE result back...
+			if (mysql_num_rows($finduser) == 1) {
+				// get the row...
+		    	$row = mysql_fetch_array($finduser);
+		    
+			    // set up our session variables based on the new logon
+				$_SESSION['userName'] = $row['UserName'];
+				$_SESSION['userID'] = $row['UserRegisterName'];
+				$_SESSION['userType'] = $row['UserType'];
+				$_SESSION['memberSince'] = $row['EntryTime'];
+				$_SESSION['pointsEarned'] = $row['UserPoints'];
+			} 
 		}
 
 	   	//Data added, we exit the script
