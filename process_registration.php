@@ -11,7 +11,6 @@ if (!isset($_SESSION['userName'])) {
 	$_SESSION['userType'] = '';
 }
 
-
 if ($_POST) //check if POST data exists 
 {
 	if ($_GET['action'] == "add") //did someone pass a variable called action with a value add
@@ -57,7 +56,7 @@ if ($_POST) //check if POST data exists
 				UserNote CHAR(100),
 				EntryTime varchar(30),
 				
-				PRIMARY KEY(UserID)
+				PRIMARY KEY(UserID, UserRegisterName)
 			)";
 
 			// Execute query to create table

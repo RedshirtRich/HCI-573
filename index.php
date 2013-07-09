@@ -11,6 +11,10 @@
 
 */
 
+	// turning on PHP error debugging console
+ini_set('display_errors', 'On');
+error_reporting(E_ALL | E_STRICT);
+
 //Include the database and constants file
 require_once 'includes/constants/dbc.php';
 require_once 'includes/constants/sql_constants.php';

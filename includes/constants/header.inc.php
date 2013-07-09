@@ -22,8 +22,8 @@ $ (function() //function that gets called whenever the document is loaded
 		$.get("clearsession.php");
 
 		// redirect, now that we are logged off
-		// If we redirect too soon, we lose our php post, so set a 2 second timer before redirect
-		setTimeout('window.location.href = "http://localhost:8888/HCI7573-FinalProject/HCI%20573/index.php"', 2000);
+		// If we redirect too soon, we lose our php post, so set a 1 second timer before redirect
+		setTimeout('window.location.href = "http://localhost:8888/HCI7573-FinalProject/HCI%20573/index.php"', 1000);
 	});
 });
 </script>
@@ -33,7 +33,7 @@ $ (function() //function that gets called whenever the document is loaded
 		echo "Welcome to Sustainable Journey, " . $_SESSION['userName'] . ". ";
 		echo "<button type=\"logOff\" class=\"logOff\" id=\"logOff_button\">Log Off</button>";
 	} else {
-		echo "You are not logged in.";
+		echo "You are not logged in";
 	}
 ?>
 	

@@ -69,8 +69,6 @@ $ (function() //function that gets called whenever the document is loaded
 			$(".errorReg").fadeIn(400).show().html('<p id="errorReg" class=errorReg><b><span style="color:red;">Please select your access type.</span></b></p>');
 		}
 		else {
-			// var html_success = '<p id="successReg" class=successReg><b>Your registration was successfully submitted, ' + userName + '</b></p>';
-
 			// Finally, this gets executed if ALL fields were entered
 			var post_data_string = 'userName=' + userName + '&userRegisterName=' + userID + '&userRegisterEmail=' + userEmail + '&userPassword=' + pass1 + '&userType=' + userType;
 			
@@ -101,11 +99,10 @@ $ (function() //function that gets called whenever the document is loaded
 				}
 			
 			});
-			// do some session majics to preserve user login state
 
 			// redirect, now that we are registered
-			// If we redirect too soon, we lose our php post, so set a 2 second timer before redirect
-			setTimeout('window.location.href = "http://localhost:8888/HCI7573-FinalProject/HCI%20573/index.php"', 2000);
+			// If we redirect too soon, we lose our php post, so set a 1 second timer before redirect
+			setTimeout('window.location.href = "http://localhost:8888/HCI7573-FinalProject/HCI%20573/index.php"', 1000);
 		}
 	
 		//We return false to prevent page refresh or reload
@@ -126,7 +123,7 @@ $ (function() //function that gets called whenever the document is loaded
 			$(".error").fadeIn(400).show().html('<p id="error" class=error><b><span style="color:red;">Please complete all fields.</span></b></p>');
 		}
 		else {
-			var html_success = '<p id="success" class=success><b>Login successful, ' + entered_name + '</b></p>';
+			var html_success = '<p id="success" class=success><b>Processing Logon...</b></p>';
 		
 			//this gets executed if all fields were entered
 			var post_data_string = 'name=' + entered_name + '&passy=' + entered_password;
@@ -150,10 +147,13 @@ $ (function() //function that gets called whenever the document is loaded
 			});
 			
 		}
+		// redirect, now that we are registered
+		// If we redirect too soon, we lose our php post, so set a 1 second timer before redirect
+		setTimeout('window.location.href = "http://localhost:8888/HCI7573-FinalProject/HCI%20573/index.php"', 1000);
 	
 		//We return false to prevent page refresh or reload
 		return false;
-	});g
+	});
 });
 </script>
 

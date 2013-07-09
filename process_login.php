@@ -1,7 +1,13 @@
 <?php
 
+// turning on PHP error debugging console
+ini_set('display_errors', 'On');
+error_reporting(E_ALL | E_STRICT);
+
 include 'includes/constants/sql_constants.php';
 include 'includes/constants/dbc.php';
+
+session_start();
 
 if (!isset($_SESSION['userName'])) {
 	$_SESSION['userName'] = '';
@@ -15,8 +21,7 @@ if ($_POST) //check if POST data exists
 	{
 
 		$name =  mysql_real_escape_string($_POST['name']);
-		$passy = mysql_real_escape_string($_POST['password']);
-		
+		$passy = mysql_real_escape_string($_POST['passy']);
 		
 		//Connect to MySQL Server
 		$con = mysql_connect($dbhost, $dbuser, $dbpass);
@@ -52,7 +57,7 @@ if ($_POST) //check if POST data exists
 				UserNote CHAR(100),
 				EntryTime varchar(30),
 				
-				PRIMARY KEY(UserID)
+				PRIMARY KEY(UserID, UserRegisterName)
 			)";
 
 			// Execute query to create table
@@ -76,21 +81,26 @@ if ($_POST) //check if POST data exists
 		}
 
 		// THIS is what we are here for.  Grab this user.
-		$sql = "SELECT * FROM  $login_table_name  WHERE UserRegisterName = $name AND UserPassword = $passy";
-		
-		// execute the insert query
-		$result = mysql_query($sql,$con) or die("Invalid query: " . mysql_error());
+		$sql = "SELECT * FROM  $login_table_name  WHERE UserRegisterName = '$name' AND UserPassword = '$passy'";
 
-		if ($result) {
-			// set up our session variables based on the new logon
-			$_SESSION['userName'] = $name;
-			$_SESSION['userID'] = $id;
-			$_SESSION['userType'] = $type;
-		}
+		// execute the insert query
+		$finduser = mysql_query($sql, $con);
+
+		// if we got our expected ONE result back...
+		if (mysql_num_rows($finduser) == 1) {
+			// get the row...
+	    	$row = mysql_fetch_array($finduser);
+	    
+		    // set up our session variables based on the new logon
+			$_SESSION['userName'] = $row['UserName'];
+			$_SESSION['userID'] = $row['UserRegisterName'];
+			$_SESSION['userType'] = $row['UserType'];
+		} 
 
 	   //Data added, we exit the script
 	   exit();
 	}
-}
-	
+
+} 
+
 ?>
