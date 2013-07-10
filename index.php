@@ -41,15 +41,21 @@ if (isset($_GET['p']) or isset($_POST['p'])) {
 //Grab the page to display (if called)
 switch ($page) {
 
+	// this should NOT be in the navBar, but is accessable ONLY from the logon div
+	case "register":
+	$page = "register.inc.php";
+	$title = "Register";
+	break;
+
+	// the below are accessable from the NavBar
 	case "welcome":
 	$page = "welcome.inc.php";
 	$title = "Welcome! Log In or Register";
 	break;
 
-	// this should NOT be in the navBar, but is accessable ONLY from the logon div
-	case "register":
-	$page = "register.inc.php";
-	$title = "Register";
+	case "lessons":
+	$page = "lessons.inc.php";
+	$title = "Lessons";
 	break;
 	
 	case "insert":
@@ -93,7 +99,7 @@ switch ($page) {
 <!-- create a new div to hold our content -->
 		<div id="divParent">
 
-			<!-- include footer here -->
+			<!-- include header here -->
 			<?php include 'includes/constants/header.inc.php';?>
 	
 			<?php
