@@ -55,7 +55,7 @@ switch ($page) {
 
 	case "lessons":
 	$page = "lessons.inc.php";
-	$title = "Lessons";
+	$title = "Weekly Lessons";
 	break;
 	
 	case "insert":
