@@ -11,7 +11,9 @@ else {
 
 echo " | ";
 
-if ($page == "insertData.inc.php"){
+// check logon status below, if not logged on, show dead links
+// unauthenticated users can only see "Welcome"
+if ($page == "insertData.inc.php" || $_SESSION['userName'] == '') {
 	echo "Insert Data";
 }
 else {
@@ -20,7 +22,7 @@ else {
 
 echo " | ";
 
-if ($page == "browseData.inc.php"){
+if ($page == "browseData.inc.php" || $_SESSION['userName'] == '') {
 	echo "Browse Data";
 }
 else {
@@ -29,7 +31,7 @@ else {
 
 echo " | ";
 
-if ($page == "chartPage.inc.php"){
+if ($page == "chartPage.inc.php" || $_SESSION['userName'] == '') {
 	echo "Chart";
 }
 else {
@@ -38,7 +40,7 @@ else {
 
 echo " | ";
 
-if ($page == "about.inc.php"){
+if ($page == "about.inc.php" || $_SESSION['userName'] == '') {
 	echo "About";
 }
 else {
