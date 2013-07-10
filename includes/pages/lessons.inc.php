@@ -57,24 +57,22 @@ if (!defined('BASE')) {
 
 <?php 
 	if ($_SESSION['userType'] == 2) {
-		echo "<h2>Weekly Lessons</h2>";
-
-		echo "<p>____________________________________</p>";
-
 		echo "<div id=\"divContainer\">";
+
+			echo "<h2>Weekly Lessons</h2>";
 
 			echo "<div id=\"divLessonsNavHeader\">";
 				include "includes/constants/lessonsNav.inc.php";
-		echo "</div>";
+			echo "</div>";
 
-		// Grab our selected week lesson page
-		//checks if the file does not exist
-		if (!file_exists("includes/pages/".$weekPage)) {
-			$weekPage = "main.inc.php";
-			$weekPage = "You didn't call a valid page.";
-		}
-		// Include the page that was called (or default if none)
-		include "includes/pages/" . $weekPage; 
+			// Grab our selected week lesson page
+			//checks if the file does not exist
+			if (!file_exists("includes/pages/".$weekPage)) {
+				$weekPage = "main.inc.php";
+				$weekPage = "You didn't call a valid page.";
+			}
+			// Include the page that was called (or default if none)
+			include "includes/pages/" . $weekPage; 
 
 		echo "</div>";
 	}
@@ -84,24 +82,22 @@ if (!defined('BASE')) {
 
 <?php 
 	if ($_SESSION['userType'] == 1) {
-		echo "<h2>Preview Weekly Lessons For Your Child</h2>";
-
-		echo "<p>____________________________________</p>";
-
 		echo "<div id=\"divContainer\">";
+
+			echo "<h2>Preview Weekly Lessons For Your Child</h2>";
 
 			echo "<div id=\"divLessonsNavHeader\">";
 				include "includes/constants/lessonsNav.inc.php";
-		echo "</div>";
+			echo "</div>";
 
-		// Grab our selected week lesson page
-		//checks if the file does not exist
-		if (!file_exists("includes/pages/".$weekPage)) {
-			$weekPage = "main.inc.php";
-			$weekPage = "You didn't call a valid page.";
-		}
-		// Include the page that was called (or default if none)
-		include "includes/pages/" . $weekPage; 
+			// Grab our selected week lesson page
+			//checks if the file does not exist
+			if (!file_exists("includes/pages/".$weekPage)) {
+				$weekPage = "main.inc.php";
+				$weekPage = "You didn't call a valid page.";
+			}
+			// Include the page that was called (or default if none)
+			include "includes/pages/" . $weekPage; 
 
 		echo "</div>";
 	}

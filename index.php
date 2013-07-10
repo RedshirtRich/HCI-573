@@ -57,26 +57,6 @@ switch ($page) {
 	$page = "lessons.inc.php";
 	$title = "Weekly Lessons";
 	break;
-	
-	case "insert":
-	$page = "insertData.inc.php";
-	$title = "Insert Data";
-	break;
-
-	case "browse":
-	$page = "browseData.inc.php";
-	$title = "Browse Data";
-	break;
-	
-	case "chart":
-	$page = "chartPage.inc.php";
-	$title = "Chart";
-	break;
-
-	case "about":
-	$page = "about.inc.php";
-	$title = "About";
-	break;
 
 	//Set a default page if $page = NULL
 	//This is our "home" page, hit by simply going to our .index page
@@ -89,6 +69,7 @@ switch ($page) {
 
 <html>
 	<head>
+		<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Schoolbell">
 		<link href="<?php echo BASE; ?>/includes/styles/style.css" rel="stylesheet" type="text/css">
 		<?php echo "<title>" . $title . "</title>"; ?>
 	</head>
@@ -114,10 +95,6 @@ switch ($page) {
 			<?php include "includes/pages/" . $page; ?>
 
 			<div id="divFooterContainer">
-				<!-- Include a footer (with links) -->
-				<?php include "includes/constants/footerNav.inc.php"; ?>
-				<br>
-				<br>
 				<!-- include footer here -->
 				<?php include 'includes/constants/footer.inc.php';?>
 			</div>

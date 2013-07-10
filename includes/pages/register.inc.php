@@ -19,9 +19,6 @@ if (!defined('BASE')) {
 ?>
 
 <link href="<?php echo BASE; ?>/includes/styles/style.css" rel="stylesheet" type="text/css">
-<h2>Register for Sustainable Journey</h2>
-<p>Select a Kids or Teacher/Parent Portal during registration.</p>
-
 <script language="JavaScript" type="text/javascript" src="jquery-1.9.1.min.js"></script>
 <!-- add link to jquery library -->
 <script src="includes/js/jquery-1.9.1.min.js"></script>  
@@ -158,6 +155,8 @@ $ (function() //function that gets called whenever the document is loaded
 </script>
 
 <div id="divContainer">
+	<h2>Register for Sustainable Journey</h2>
+
 	<div id="divRegister">
 		<form id="form" name="form" method="post">  <!-- action="process_registration.php" -->
 			

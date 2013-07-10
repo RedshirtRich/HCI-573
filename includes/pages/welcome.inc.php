@@ -14,8 +14,6 @@ if (!defined('BASE')) {
 }
 ?>
 <link href="<?php echo BASE; ?>/includes/styles/style.css" rel="stylesheet" type="text/css">
-<h2>Welcome</h2>
-<p>You can Log In or Register here.</p>
 
 <script language="JavaScript" type="text/javascript" src="jquery-1.9.1.min.js"></script>
 <!-- add link to jquery library -->
@@ -80,6 +78,7 @@ $ (function() //function that gets called whenever the document is loaded
 </script>
 
 <div id="divContainer">
+	<h2>Welcome</h2>
 	<div id="divWelcomeContentPane">
 		<p id="loginHeader" class=loginHeader><span style="color:black;">Find Interesting Topics</span></p>
 	</div>

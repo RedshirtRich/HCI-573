@@ -2,7 +2,7 @@
 		
 	<p id="loginHeader" class=loginHeader><span style="color:black;">Profile</span></p>
 	<br>
-	<label><?php echo "Welcome back, " . $_SESSION['userName']; ?></label>
+	<label><?php echo "Member Name: " . $_SESSION['userName']; ?></label>
 	<br>
 	<?php 
 		if ($_SESSION['userType'] == 1) {

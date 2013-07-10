@@ -1,10 +1,9 @@
-<header>Sustainable Journey</header>
-
 <script language="JavaScript" type="text/javascript" src="jquery-1.9.1.min.js"></script>
 <!-- add link to jquery library -->
 <script src="includes/js/jquery-1.9.1.min.js"></script>  
 
 <div id="divHeaderPanel">
+	<header>Sustainable Journey</header>
 	<script>
 	$ (function() //function that gets called whenever the document is loaded
 	{
@@ -31,10 +30,43 @@
 
 	<?php 
 		if ($_SESSION['userName'] != '') {
-			echo "Welcome to Sustainable Journey, " . $_SESSION['userName'] . ". ";
-			echo "<button type=\"logOff\" class=\"logOff\" id=\"logOff_button\">Log Off</button>";
+			echo "<table class=\"width100\">";
+				echo "<col class=\"width33\" />";
+				echo "<col class=\"width33\" />";
+				echo "<col class=\"width33\" />";
+				echo "<tr>";
+					echo "<td>";
+						echo "<div id=\"headerSubtext\">Welcome back, " . $_SESSION['userName'] . ".</div>";
+					echo "</td>";
+					echo "<td align=\"center\">";
+						echo "<div id=\"divHeaderNav\">";
+						include "includes/constants/footerNav.inc.php";
+						echo "</div>";
+					echo "</td>";
+					echo "<td>";
+						echo "<button type=\"logOff\" class=\"logOff\" id=\"logOff_button\">Log Off</button>";
+					echo "</td>";
+				echo "</tr>";
+			echo "</table>";
 		} else {
-			echo "You are not logged in";
+			echo "<table class=\"width100\">";
+				echo "<col class=\"width33\" />";
+				echo "<col class=\"width33\" />";
+				echo "<col class=\"width33\" />";
+				echo "<tr>";
+					echo "<td>";
+						echo "<div id=\"headerSubtext\">You are not logged in.</div>";
+					echo "</td>";
+					echo "<td align=\"center\">";
+						echo "<div id=\"divHeaderNav\">";
+						include "includes/constants/footerNav.inc.php";
+						echo "</div>";
+					echo "</td>";
+					echo "<td>";
+						echo "  ";
+					echo "</td>";
+				echo "</tr>";
+			echo "</table>";
 		}
 	?>
 </div>
