@@ -78,7 +78,7 @@
 	    		$weekLessonTitle = ($row['UnitName']); 
 	    		$yourGuide = ($row['LectureName']);
 	    		$guideInfo = ($row['TextInfoPurpose']);
-				$videoLink1 = ($row['VideoInfo']);
+				$videoLink = ($row['VideoInfo']);
 				$imageGuider1 = ($row['ImageInfoGuider']);
 
 	  //   	} else if ($i == 2) { // second row

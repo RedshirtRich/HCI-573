@@ -22,12 +22,12 @@ if (!defined('BASE')) {
 	<!-- We are going to cheat up in here and format ourselves to the data we KNOW will be coming back, -->
 	<!-- just for the sake of getting something done, and because our data needs to be better constructed -->
 	<!-- in order to be more dynamic, as it should be for a site that is a SERVICE for displaying lessons -->
-	<div id="divGuideBlock">
+	<div id="divGuidePanel">
 		<div id="divLessonTitle">
 			<?php echo "<h3>" . $weekLessonTitle . "</h3>"; ?>
 		</div>
 		<?php $imageContent = "/images/" . $imageGuider1; ?>
-		<div id="divGuidePane">
+		<div id="divGuideImageFrame">
 			<div id="divGuideImage">
 				<center>
 					<img src="<?php echo BASE; echo $imageContent; ?>" alt="<?php echo $altText; ?>" />
@@ -39,5 +39,18 @@ if (!defined('BASE')) {
 			<?php echo $guideInfo; ?>
 		</div>
 	</div>
-		
+	<div id="divGuideVideoPanel">
+		<table>
+			<tr>
+				<td>
+					<div id="divGuideVideoFrame">
+						<iframe title="YouTube video player" class="youtube-player" type="text/html" width="450" height="253" src="<?php echo $videoLink; ?>" frameborder="0" allowFullScreen></iframe>
+					</div>
+				</td>
+				<td>	
+					<h4>Check out an interesting video about me!</h4> 
+				</td>
+			</tr>
+		</table>		
+	</div>
 </div>

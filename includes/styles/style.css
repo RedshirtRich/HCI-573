@@ -380,16 +380,18 @@ input {
 	margin: 5px 20px;
 }
 
+/* Begin divs for lessons */
+
+#divGuidePanel {
+	/*border: 1px solid #000000;*/
+	width: 100%;
+	max-height: 750px;
+	display: inline-block;
+}
+
 #divLessonTitle {
 	width: 100%;
 	height: 60px;
-}
-
-#divGuideBlock {
-	/*border: 1px solid #000000;*/
-	width: 100%;
-	max-height: 600px;
-	display: inline;
 }
 
 #divGuideImage {
@@ -399,8 +401,7 @@ input {
 	display: inline-block;
 }
 
-#divGuidePane {
-	/*float: left;*/
+#divGuideImageFrame {
 	/*border: 1px solid #000000;*/
 	height: 300px;
 	width: 350px;
@@ -409,14 +410,29 @@ input {
 }
 
 #divGuideDialog {
+	/*border: 1px solid #000000;*/
 	border-radius: 25px;
 	box-shadow: 1px 1px 5px #000000;
 	float: right;
-	/*border: 1px solid #000000;*/
 	width: 340px;
-	max-height: 575px;
+	max-height: 580px;
 	margin-right: 10px;
 	padding: 20px 20px 20px 20px;
 	display: inline-block;
 	color: black;
+}
+
+#divGuideVideoPanel {
+	/*border: 1px solid #000000;*/
+	width: 100%;
+	height: 300px;
+	display: inline-block;
+}
+
+#divGuideVideoFrame {
+	box-shadow: 1px 1px 5px #000000;
+	overflow: hidden;
+	float: center;
+	display: inline-block;
+	margin: 10px 10px 10px 10px;
 }
