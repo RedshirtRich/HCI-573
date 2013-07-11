@@ -69,7 +69,7 @@ $ (function() //function that gets called whenever the document is loaded
 		}
 		// redirect, now that we are registered
 		// If we redirect too soon, we lose our php post, so set a 1 second timer before redirect
-		setTimeout('window.location.href = "http://localhost:8888/HCI7573-FinalProject/HCI%20573/index.php"', 1000);
+		setTimeout('window.location.href = "<?php echo BASE; ?>/index.php"', 1000);
 	
 		//We return false to prevent page refresh or reload
 		return false;
