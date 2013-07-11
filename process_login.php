@@ -84,7 +84,7 @@ if ($_POST) //check if POST data exists
 		}
 
 		// THIS is what we are here for.  Grab this user.
-		$sql = "SELECT * FROM  $login_table_name  WHERE UserRegisterName = '$name' AND UserPassword = '$passy'";
+		$sql = "SELECT * FROM $login_table_name WHERE UserRegisterName = '$name' AND UserPassword = '$passy'";
 
 		// execute the insert query
 		$finduser = mysql_query($sql, $con);

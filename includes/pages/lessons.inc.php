@@ -26,28 +26,34 @@ if (!defined('BASE')) {
 
 		// the below are accessable from the NavBar
 		case "week1":
-		$weekPage = "week1.inc.php";
+		$weekPage = "weekLesson.inc.php";
+		$pageWeekNumber = 1;
 		break;
 
 		case "week2":
-		$weekPage = "week2.inc.php";
+		$weekPage = "weekLesson.inc.php";
+		$pageWeekNumber = 2;
 		break;
 
 		case "week3":
-		$weekPage = "week3.inc.php";
+		$weekPage = "weekLesson.inc.php";
+		$pageWeekNumber = 3;
 		break;
 
 		case "week4":
-		$weekPage = "week4.inc.php";
+		$weekPage = "weekLesson.inc.php";
+		$pageWeekNumber = 4;
 		break;
 
 		case "week5":
-		$weekPage = "week5.inc.php";
+		$weekPage = "weekLesson.inc.php";
+		$pageWeekNumber = 5;
 		break;
 
 		//Set a default page if $selectedWeek = NULL
 		default:
-		$weekPage = "week1.inc.php";
+		$weekPage = "weekLesson.inc.php";
+		$pageWeekNumber = 1;
 		break;
 	}
 ?>

@@ -41,6 +41,22 @@ h2 {
 	text-align: center;
 }
 
+h3 {
+	font-family: 'Schoolbell', serif;
+	font-size: 30px;
+	color: #008500;
+	text-shadow: 1px 1px 1px #000000;
+	text-align: center;
+}
+
+h4 {
+	font-family: 'Schoolbell', serif;
+	font-size: 25px;
+	color: #008500;
+	text-shadow: 1px 1px 1px #000000;
+	text-align: center;
+}
+
 header {
 	/*border: 1px solid #000000;*/
 	font-family: 'Schoolbell', serif;
@@ -55,6 +71,16 @@ th {
 
 td {
 	font-size: 14px;
+}
+
+img {
+	max-height: 98%;
+	max-width: 98%;
+	border-radius: 25px;
+	box-shadow: 1px 1px 5px #000000;
+	overflow: hidden;
+	float: center;
+	display: inline-block;
 }
 
 .width33 {
@@ -190,12 +216,17 @@ a:visited {
 }
 
 #divWeekLessonContainer {
-	border: 1px solid #000000;
+	/*border: 1px solid #000000;*/
+	background-color: ghostwhite;
+	border-radius: 5px;
+	box-shadow:inset 0px 0px 5px #000000;
 	font-size: 16px;
 	text-align: left;
-	margin: 10px auto;
+	padding: 15px auto;
+	margin: 15px auto;
 	width: 100%;
 	height: 475px;
+	overflow: scroll;
 }
 
 label {
@@ -347,4 +378,45 @@ input {
 	width: 100% - 40px;
 	height: 30px;
 	margin: 5px 20px;
+}
+
+#divLessonTitle {
+	width: 100%;
+	height: 60px;
+}
+
+#divGuideBlock {
+	/*border: 1px solid #000000;*/
+	width: 100%;
+	max-height: 600px;
+	display: inline;
+}
+
+#divGuideImage {
+	height: 270px;
+	width: 350px;
+	float: center;
+	display: inline-block;
+}
+
+#divGuidePane {
+	/*float: left;*/
+	/*border: 1px solid #000000;*/
+	height: 300px;
+	width: 350px;
+	margin-left: 10px;
+	display: inline-block;
+}
+
+#divGuideDialog {
+	border-radius: 25px;
+	box-shadow: 1px 1px 5px #000000;
+	float: right;
+	/*border: 1px solid #000000;*/
+	width: 340px;
+	max-height: 575px;
+	margin-right: 10px;
+	padding: 20px 20px 20px 20px;
+	display: inline-block;
+	color: black;
 }
