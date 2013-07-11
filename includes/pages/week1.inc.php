@@ -14,5 +14,9 @@ if (!defined('BASE')) {
 <div id="divWeekLessonContainer">
 
 	Week One
+	<br>
+	<br>
+
+	<?php include "get_lessons.php"; ?>
 	
 </div>
