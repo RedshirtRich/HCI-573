@@ -69,11 +69,13 @@ td {
 a:link {
 	/* unvisited link */
 	color: #000000;
+	font-weight: bold;
 }      
 
 a:visited {
 	/* visited link */
 	color: #000000;
+	font-weight: bold;
 }  
 
 #divParent {
@@ -166,7 +168,8 @@ a:visited {
 
 #divLessonsNavHeader {
 	border: 1px solid #006363;
-	box-shadow:1px 1px 5px #000000;
+	box-shadow:0px 0px 2px #000000;
+	font-weight: bold;
 	float: center;
     width: 500px;
 	height: 40px;
@@ -264,7 +267,7 @@ input {
 #divHeaderNav {
 	/*border: 1px solid #000000;*/
 	float: center;
-    border-radius: 5px;
+    border-radius: 4px;
     overflow: hidden;
 	height: 24px;
 	width: 220px;
