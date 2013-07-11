@@ -64,9 +64,12 @@
 
 	// NOW, we just have to save the data away to user defaults... maybe week lesson at a time?
 
+	// We KNOW we have data now, so go get it, week at a time
+	$sql  = "SELECT * FROM $lessons_table_name WHERE ";
+	$result = mysql_query($sql,$con);
 
 
-	// //IF LESSONS LOCATED, SAVE ALL DETAILS TO SESSION VALUES
+	//IF LESSONS LOCATED, SAVE ALL DETAILS TO SESSION VALUES
 	// if (mysql_num_rows($result) != 0) {
 	//     //output start of results
 	    

@@ -68,12 +68,12 @@ td {
 
 a:link {
 	/* unvisited link */
-	color: #006363;
+	color: #000000;
 }      
 
 a:visited {
 	/* visited link */
-	color: #006363;
+	color: #000000;
 }  
 
 #divParent {
@@ -225,7 +225,7 @@ input {
 	line-height: 40px;
 	background-color: #009999;
 	display: inline-block;
-	box-shadow:0px 0px 2px #000000;
+	box-shadow:inset 0px 0px 5px #000000;
 }
 
 #submit_button {
@@ -262,15 +262,43 @@ input {
 }
 
 #divHeaderNav {
-	line-height: 20px;
+	/*border: 1px solid #000000;*/
 	float: center;
+    border-radius: 5px;
+    overflow: hidden;
+	height: 24px;
+	width: 220px;
+	font-weight: bold;
 	display: inline-block;
+	box-shadow:0px 0px 2px #000000;
 }
 
 #logOff_button {
 	float: right;
 	margin-right: 10px;
 	display: inline-block;
+}
+
+#navSmallHeaderButton {
+	height: 100%;
+	width: 50%;
+	line-height: 24px;
+	font-size: 18px;
+	font-weight: bold;
+	background-color: #67E667;
+	display: inline-block;
+	box-shadow:0px 0px 2px #000000;
+}
+
+#navSmallHeaderButtonSelected {
+	height: 100%;
+	width: 50%;
+	line-height: 24px;
+	font-size: 18px;
+	font-weight: bold;
+	background-color: #00CC00;
+	display: inline-block;
+	box-shadow:inset 0px 0px 5px #000000;
 }
 
 #error {
