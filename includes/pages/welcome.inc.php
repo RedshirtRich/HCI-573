@@ -80,7 +80,16 @@ $ (function() //function that gets called whenever the document is loaded
 <div id="divContainer">
 	<h2>Welcome</h2>
 	<div id="divWelcomeContentPane">
-		<p id="loginHeader" class=loginHeader><span style="color:black;">Find Interesting Topics</span></p>
+		<p id="loginHeader" class=loginHeader><span style="color:black;">What is "Sustainable Journey"?</span></p>
+		<br>
+		<center>
+		<img class="width50" src="<?php echo BASE; echo "/images/bookcover.png"; ?>" alt="Book" />
+		<br>
+		<br>
+		<br> Sustainable Journey is based on this great resource.
+		<br>
+	</center>
+
 	</div>
 
 	<?php 
