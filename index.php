@@ -94,6 +94,10 @@ switch ($page) {
 			<!-- Include the page that was called (or default if none) -->
 			<?php include "includes/pages/" . $page; ?>
 
+			<br>
+			<br>
+			<br>
+
 			<div id="divFooterContainer">
 				<!-- include footer here -->
 				<?php include 'includes/constants/footer.inc.php';?>

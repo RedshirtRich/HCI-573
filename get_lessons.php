@@ -68,7 +68,7 @@
 	$result = mysql_query($sql,$con);
 
 
-	//IF LESSONS LOCATED, SAVE ALL DETAILS TO PHP VALUES
+	// IF LESSONS LOCATED, SAVE ALL DETAILS TO PHP VALUES
 	// Except for Week 5, all lessons have 11 rows
 	if (mysql_num_rows($result) != 0) {
 	    $i = 0;
@@ -81,78 +81,20 @@
 				$videoLink = ($row['VideoInfo']);
 				$imageGuider1 = ($row['ImageInfoGuider']);
 
-	  //   	} else if ($i == 2) { // second row
-	  //   		$weekLessonTitle = ($row['UnitName']); 
-	  //   		$yourGuide = ($row['UnitName']);
-	  //   		$lectureName1 = ($row['LectureName']);
-	  //   		$infoPurpose1 = ($row['TextInfoPurpose']);
-	  //   		$action1_1 = ($row['TextInfoAction1']);
-	  //   		$action1_2 = ($row['TextInfoAction2']);
-	  //   		$action1_3 = ($row['TextInfoAction3']);
-	  //   		$action1_4 = ($row['TextInfoAction4']);
-	  //   		$material1 = ($row['TextInfoMaterial']);
-			// 	$infoTime1 = ($row['TextInfoTime']);
-			// 	$imageTime1 = ($row['ImageInfoTime']);
-			// 	$videoLink1 = ($row['VideoInfo']);
-			// 	$imageGuider1 = ($row['ImageInfoGuider']);
-			// 	$infoMaterial1_1 = ($row['ImageMaterial1']);
-			// 	$infoMaterial1_2 = ($row['ImageMaterial2']);
-			// 	$infoMaterial1_3 = ($row['ImageMaterial3']);
-
-   //  		} else if ($i == 3) { // third row
-   //  			$weekLessonTitle = ($row['UnitName']); 
-	  //   		$yourGuide = ($row['UnitName']);
-	  //   		$lectureName1 = ($row['LectureName']);
-	  //   		$infoPurpose1 = ($row['TextInfoPurpose']);
-	  //   		$action1_1 = ($row['TextInfoAction1']);
-	  //   		$action1_2 = ($row['TextInfoAction2']);
-	  //   		$action1_3 = ($row['TextInfoAction3']);
-	  //   		$action1_4 = ($row['TextInfoAction4']);
-	  //   		$material1 = ($row['TextInfoMaterial']);
-			// 	$infoTime1 = ($row['TextInfoTime']);
-			// 	$imageTime1 = ($row['ImageInfoTime']);
-			// 	$videoLink1 = ($row['VideoInfo']);
-			// 	$imageGuider1 = ($row['ImageInfoGuider']);
-			// 	$infoMaterial1_1 = ($row['ImageMaterial1']);
-			// 	$infoMaterial1_2 = ($row['ImageMaterial2']);
-			// 	$infoMaterial1_3 = ($row['ImageMaterial3']);
-
-			// } else if ($i == 4) { // fourth row
-			// 	$weekLessonTitle = ($row['UnitName']); 
-	  //   		$yourGuide = ($row['UnitName']);
-	  //   		$lectureName1 = ($row['LectureName']);
-	  //   		$infoPurpose1 = ($row['TextInfoPurpose']);
-	  //   		$action1_1 = ($row['TextInfoAction1']);
-	  //   		$action1_2 = ($row['TextInfoAction2']);
-	  //   		$action1_3 = ($row['TextInfoAction3']);
-	  //   		$action1_4 = ($row['TextInfoAction4']);
-	  //   		$material1 = ($row['TextInfoMaterial']);
-			// 	$infoTime1 = ($row['TextInfoTime']);
-			// 	$imageTime1 = ($row['ImageInfoTime']);
-			// 	$videoLink1 = ($row['VideoInfo']);
-			// 	$imageGuider1 = ($row['ImageInfoGuider']);
-			// 	$infoMaterial1_1 = ($row['ImageMaterial1']);
-			// 	$infoMaterial1_2 = ($row['ImageMaterial2']);
-			// 	$infoMaterial1_3 = ($row['ImageMaterial3']);
-
-			// } else if ($i == 5) { // fifth row
-			// 	$weekLessonTitle = ($row['UnitName']); 
-	  //   		$yourGuide = ($row['UnitName']);
-	  //   		$lectureName1 = ($row['LectureName']);
-	  //   		$infoPurpose1 = ($row['TextInfoPurpose']);
-	  //   		$action1_1 = ($row['TextInfoAction1']);
-	  //   		$action1_2 = ($row['TextInfoAction2']);
-	  //   		$action1_3 = ($row['TextInfoAction3']);
-	  //   		$action1_4 = ($row['TextInfoAction4']);
-	  //   		$material1 = ($row['TextInfoMaterial']);
-			// 	$infoTime1 = ($row['TextInfoTime']);
-			// 	$imageTime1 = ($row['ImageInfoTime']);
-			// 	$videoLink1 = ($row['VideoInfo']);
-			// 	$imageGuider1 = ($row['ImageInfoGuider']);
-			// 	$infoMaterial1_1 = ($row['ImageMaterial1']);
-			// 	$infoMaterial1_2 = ($row['ImageMaterial2']);
-			// 	$infoMaterial1_3 = ($row['ImageMaterial3']);
-
+				// all other rows have lesson data
+	    	} else { // the rest
+	    		${"lectureName" . $i} = ($row['LectureName']);
+	    		${"infoPurpose" . $i} = ($row['TextInfoPurpose']);
+	    		${"action1_" . $i} = ($row['TextInfoAction1']);
+	    		${"action2_" . $i} = ($row['TextInfoAction2']);
+	    		${"action3_" . $i} = ($row['TextInfoAction3']);
+	    		${"action4_" . $i} = ($row['TextInfoAction4']);
+	    		${"material" . $i} = ($row['TextInfoMaterial']);
+				${"infoTime" . $i} = ($row['TextInfoTime']);
+				${"imageTime" . $i} = ($row['ImageInfoTime']);
+				${"infoMaterial1_" . $i} = ($row['ImageMaterial1']);
+				${"infoMaterial2_" . $i} = ($row['ImageMaterial2']);
+				${"infoMaterial3_" . $i} = ($row['ImageMaterial3']);
 	    	}
 	    	$i++;
 	    }

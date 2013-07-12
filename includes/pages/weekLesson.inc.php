@@ -30,7 +30,7 @@ if (!defined('BASE')) {
 		<div id="divGuideImageFrame">
 			<div id="divGuideImage">
 				<center>
-					<img src="<?php echo BASE; echo $imageContent; ?>" alt="<?php echo $altText; ?>" />
+					<img src="<?php echo BASE; echo $imageContent; ?>" alt="<?php echo $yourGuide; ?>" />
 				</center>
 			</div>	
 			<?php echo "<h4>" . $yourGuide . "</h4>"; ?>
@@ -39,6 +39,9 @@ if (!defined('BASE')) {
 			<?php echo $guideInfo; ?>
 		</div>
 	</div>
+	<br>
+	<br>
+	<br>
 	<div id="divGuideVideoPanel">
 		<table>
 			<tr>
@@ -53,4 +56,110 @@ if (!defined('BASE')) {
 			</tr>
 		</table>		
 	</div>
+
+	<div id="divLessonPanel">
+	<!-- Use a php loop to go through the rest of out data -->
+	<?php
+		// since we know the number of rows in each lesson, we are CHEATING here and setting them manually
+		if ($pageWeekNumber == 1) {
+			$rowCount = 11;
+		} else if ($pageWeekNumber == 2 || $pageWeekNumber == 3 || $pageWeekNumber == 4) {
+			$rowCount = 10;
+		} else if ($pageWeekNumber == 5) {
+			$rowCount = 5;
+		}
+		for ($i = 1; $i <= $rowCount; $i++) {
+			echo "<hr>";
+			echo "<center>";
+			echo "<div id=\"divLessonSubTitle\">";
+				echo "<div id=\"divh5\">" . ${"lectureName" . $i} . "</div>";
+			echo "</div>";
+
+
+			echo "<div id=\"divLessonSubTitle\"><div id=\"divh6\">Step 1: Why Act?</div></div>";
+			echo "<div id=\"divInfoPurpose\">";
+				echo ${"infoPurpose" . $i};
+			echo "</div>";
+			echo "<br>";
+			echo "<br>";
+
+
+			echo "<div id=\"divLessonSubTitle\"><div id=\"divh6\">Step 2: Earth Act</div></div>";
+			echo "<div id=\"divActionsPanel\">";
+				echo "<table class=\"width90\">";
+				// up to four actions possible
+				for ($j = 1; $j <= 4; $j++) {
+					// check to see if each variable has been set, or is "null"
+					if (${"action" . $j . "_" . $i} != "null") { 
+						echo "<tr>";
+							echo "<td width=\"10%\">";
+								echo "<div id=\"divBulletShape\"></div>";
+							echo "</td>";
+							echo "<td>";
+								echo "<div id=\"divActionCell\">";
+									echo ${"action" . $j . "_" . $i};
+								echo "</div>";
+							echo "</td>";
+						echo "</tr>";
+					}
+				}
+				echo "</table>";
+			echo "</div>";
+			echo "<br>";
+			echo "<br>";
+
+
+
+			echo "<div id=\"divLessonSubTitle\"><div id=\"divh6\">Step 3: Time</div></div>";
+			echo "<table class=\"width50\">";
+				echo "<tr>";
+					echo "<td width=\"80px\">";
+						echo "<img src=\"" . BASE . "/images/" . ${"imageTime" . $i} . "\" alt=\"timeimage\" />";
+					echo "</td>";
+					echo "<td width=\"200px\">";
+						echo "<div id=\"divActionCell\">";
+							echo ${"infoTime" . $i};
+						echo "</div>";
+					echo "</td>";
+				echo "</tr>";
+			echo "</table>";
+			echo "<br>";
+			echo "<br>";
+
+
+			echo "<div id=\"divLessonSubTitle\"><div id=\"divh6\">Step 4: Materials</div></div>";
+			echo ${"material" . $i};
+			echo "<table class=\"width90\">";
+				echo "<tr>";
+				if (${"infoMaterial1_" . $i} != "null") {
+					echo "<td width=\"80px\">";
+						echo "<img src=\"" . BASE . "/images/" . ${"infoMaterial1_" . $i} . "\" alt=\"timeimage\" />";
+					echo "</td>";
+				}
+				if (${"infoMaterial2_" . $i} != "null") {
+					echo "<td width=\"80px\">";
+						echo "<img src=\"" . BASE . "/images/" . ${"infoMaterial2_" . $i} . "\" alt=\"timeimage\" />";
+					echo "</td>";
+				}
+				if (${"infoMaterial3_" . $i} != "null") {
+					echo "<td width=\"80px\">";
+						echo "<img src=\"" . BASE . "/images/" . ${"infoMaterial3_" . $i} . "\" alt=\"timeimage\" />";
+					echo "</td>";
+				}
+				echo "</tr>";
+			echo "</table>";
+			echo "<br>";
+			echo "<br>";
+
+
+			echo "</center>";
+		} 
+
+	?>
+	</div>
 </div>
+
+
+
+
+
