@@ -133,17 +133,17 @@ if (!defined('BASE')) {
 				echo "<tr>";
 				if (${"infoMaterial1_" . $i} != "null") {
 					echo "<td width=\"80px\">";
-						echo "<img src=\"" . BASE . "/images/" . ${"infoMaterial1_" . $i} . "\" alt=\"timeimage\" />";
+						echo "<center><img src=\"" . BASE . "/images/" . ${"infoMaterial1_" . $i} . "\" alt=\"timeimage\" /></center>";
 					echo "</td>";
 				}
 				if (${"infoMaterial2_" . $i} != "null") {
 					echo "<td width=\"80px\">";
-						echo "<img src=\"" . BASE . "/images/" . ${"infoMaterial2_" . $i} . "\" alt=\"timeimage\" />";
+						echo "<center><img src=\"" . BASE . "/images/" . ${"infoMaterial2_" . $i} . "\" alt=\"timeimage\" /></center>";
 					echo "</td>";
 				}
 				if (${"infoMaterial3_" . $i} != "null") {
 					echo "<td width=\"80px\">";
-						echo "<img src=\"" . BASE . "/images/" . ${"infoMaterial3_" . $i} . "\" alt=\"timeimage\" />";
+						echo "<center><img src=\"" . BASE . "/images/" . ${"infoMaterial3_" . $i} . "\" alt=\"timeimage\" /></center>";
 					echo "</td>";
 				}
 				echo "</tr>";
